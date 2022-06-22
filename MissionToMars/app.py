@@ -3,7 +3,8 @@
 #-----------------------------------------------
 
 # Dependencies and Setup
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
+from flask.helpers import url_for
 import pymongo
 import scrape
 
@@ -37,7 +38,7 @@ def scrapper():
     mars = mongo.db.mars
     mars_data = scrape.scrape_all()
     mars.update({}, mars_data, upsert=True)
-    return "Scraping Successful"
+    return redirect(url_for('index'))
 
 # Define Main Behavior
 if __name__ == "__main__":

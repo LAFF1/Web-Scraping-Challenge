@@ -143,8 +143,8 @@ def mars_hemispheres(browser):
 #----------------------------------------
 
 def scrape_all():
-    # executable_path = {"executable_path": "./chromedriver.exe"}
-    # browser = Browser("chrome", **executable_path, headless=False)
+    executable_path = {"executable_path": "./chromedriver.exe"}
+    browser = Browser("chrome", **executable_path, headless=False)
 
     # Run each scrape function  
     mars_news(browser)
