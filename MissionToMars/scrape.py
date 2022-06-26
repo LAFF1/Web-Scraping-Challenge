@@ -99,7 +99,6 @@ def mars_facts():
     try:
          # Visit the Mars Facts Site Using Pandas to Read
          mars_df = pd.read_html("https://galaxyfacts-mars.com/")[0]
-        #  marst = mars_df.reset_index(drop=True)
          table_data = mars_df.to_html(classes="table table-striped table-light", header=False, index=False)
 
          # Add to goodies dictionary

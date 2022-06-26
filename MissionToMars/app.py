@@ -12,7 +12,6 @@ import scrape
 # Flask Setup
 #-----------------------------------------------
 app = Flask(__name__)
-print("Flask set passed")
 
 #-----------------------------------------------
 # PyMongo Connection Setup
@@ -28,7 +27,6 @@ db = mongo.mars
 # Home Route to query MongoDB & Pass Mars Data Into HTML Template
 @app.route("/")
 def index():
-    print('Entered Home Route')
     mars = mongo.db.mars.find_one()
     return render_template("index.html", mars=mars)
 
